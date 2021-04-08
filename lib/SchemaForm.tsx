@@ -27,7 +27,7 @@ export default defineComponent({
 
         return () => {
             const { schema, value, onChange } = props
-            return <SchemaItem schema={schema} value={value} onChange={handleChange} />
+            return <SchemaItem schema={schema} rootSchema={schema} value={value} onChange={handleChange} />
         }
     }
 })
