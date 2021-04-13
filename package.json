@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "rimraf dist && npm run build:core && npm run build:theme",
+    "build:core": "TYPE=lib vue-cli-service build --no-clean --target lib --name index lib/index.ts",
+    "build:theme": "TYPE=lib vue-cli-service build --no-clean --target lib --name theme-default/index lib/theme-default/index.tsx",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
@@ -19,6 +21,7 @@
     "jss": "^10.6.0",
     "jss-preset-default": "^10.6.0",
     "lodash.union": "^4.6.0",
+    "rimraf": "^3.0.2",
     "vue": "^3.0.0",
     "vue-jss": "0.0.4"
   },

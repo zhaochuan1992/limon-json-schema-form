@@ -6,6 +6,8 @@ import { useVJSFContext } from '../context'
 
 import { getWidget } from '../theme'
 
+import SelectionWidget from '../widgets/Selection'
+
 const useStyles = createUseStyles({
     container: {
         border: '1px solid #eee',
@@ -152,10 +154,10 @@ export default defineComponent({
             props.onChange(arr)
         }
 
-        const SelectionWidgetRef = getWidget('SelectionWidget')
+        // const SelectionWidgetRef = getWidget('SelectionWidget')
 
         return () => {
-            const SelectionWidget = SelectionWidgetRef.value
+            // const SelectionWidget = SelectionWidgetRef.value
             const { schema, rootSchema, value } = props
 
             const SchemaItem = context.SchemaItem
@@ -211,7 +213,6 @@ export default defineComponent({
                         onChange={props.onChange}
                         value={props.value}
                         options={options}
-                        schema={schema}
                     />
                 )
             }
